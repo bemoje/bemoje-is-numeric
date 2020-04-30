@@ -1,4 +1,5 @@
 import isNumber from '@bemoje/is-number';
+import isNumericString from '@bemoje/is-numeric-string';
 
 /**
  * Determine whether a value is numeric or not.
@@ -6,15 +7,7 @@ import isNumber from '@bemoje/is-number';
  * @returns {boolean}
  */
 function isNumeric(value) {
-	if (isNumber(value)) {
-		return true
-	}
-
-	if (typeof value === 'string' && value.trim() !== '') {
-		return Number.isFinite ? Number.isFinite(+value) : isFinite(+value)
-	}
-
-	return false
+	return isNumber(value) || isNumericString(value)
 }
 
 export default isNumeric;
